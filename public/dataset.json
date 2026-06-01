@@ -1,0 +1,136 @@
+{
+  "name": "test dataset",
+  "data":{
+    "id": "1",
+    "label": "VisuallyJs",
+    "notes": "The most versatile and configurable library for building diagrams, node-based apps and charts",
+    "right": [
+      {
+        "id": "3",
+        "label": "Apps",
+        "notes": "Build professional, fully-featured node-based apps in record time",
+        "children": [
+          {
+            "id": "33",
+            "label": "Surface",
+            "notes": "The Surface component offers the smoothest pan/zoom for miles around and a load of useful plugins",
+            "children": [
+              {
+                "id": "12",
+                "label": "Plugins",
+                "notes": "Extend the functionality of the Surface with modular add-ons like Miniview or Lasso",
+                "children": [
+                  {
+                    "id": "13",
+                    "label": "Miniview",
+                    "notes": "Show a mini rendering of your canvas and use it to pan your content around"
+                  },
+                  {
+                    "id": "14",
+                    "label": "Backgrounds",
+                    "notes": "Image backgrounds, tiled image backgrounds, generated grids and more"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "103",
+        "label": "Diagrams",
+        "notes": "Easily produce SVG diagrams",
+        "children": [
+          {
+            "id": "104",
+            "label": "Pure SVG",
+            "notes": "Everything is rendered as pure SVG, ensuring crisp visuals at any zoom level"
+          },
+          {
+            "id": "105",
+            "label": "Export",
+            "notes": "Fast and easy export to SVG, PNG and JPG formats"
+          },
+          {
+            "id": "106",
+            "label": "Custom Shapes",
+            "notes": "Incorporate any SVG shape you like into your nodes and edges"
+          }
+        ]
+      },
+      {
+        "id": "203",
+        "label": "Charts",
+        "notes": "Wide range of 2D charts",
+        "children": [
+          {
+            "id": "204",
+            "label": "2D Charts",
+            "notes": "Includes bar, column, area, bubble, scatter, line, and pie charts"
+          },
+          {
+            "id": "205",
+            "label": "Sankey",
+            "notes": "Specialized Sankey diagrams for visualizing flow and volume between stages"
+          },
+          {
+            "id": "206",
+            "label": "Dashboards",
+            "notes": "Build interactive dashboards using diagrams or apps as live data sources"
+          }
+        ]
+      }
+    ],
+    "left": [
+      {
+        "id": "2",
+        "label": "Layouts",
+        "notes": "VisuallyJs ships with a number of layouts, and it's simple to create your own",
+        "children": [
+          {
+            "id": "9",
+            "label": "Force Directed",
+            "notes": "A layout that uses physical simulations to position nodes for optimal visibility"
+          },
+          {
+            "id": "10",
+            "label": "Hierarchy",
+            "notes": "Specifically designed for displaying tree structures and parent-child relationships clearly"
+          },
+          {
+            "id": "11",
+            "label": "Balloon",
+            "notes": "A radial layout that arranges children in concentric circles around their parent node"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "label": "CSS",
+        "notes": "Fully configurable via the wealth of CSS classes exposed by the various UI components"
+      },
+      {
+        "id": "5",
+        "label": "Model",
+        "notes": "Backed by a directed/undirected graph, VisuallyJs lets you work with your data at the model level",
+        "children": [
+          {
+            "id": "6",
+            "label": "Edges",
+            "notes": "Represent the relationships or connections between nodes in the underlying graph model"
+          },
+          {
+            "id": "7",
+            "label": "Nodes",
+            "notes": "The core entities of your diagram, fully customizable with HTML/SVG and bound to your data"
+          },
+          {
+            "id": "8",
+            "label": "Groups",
+            "notes": "Logical containers that allow you to organize multiple nodes together, supporting hierarchy and nesting"
+          }
+        ]
+      }
+    ]
+  }
+}

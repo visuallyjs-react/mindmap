@@ -1,0 +1,7 @@
+@import "@visuallyjs/browser-ui/css/visuallyjs.css";
+@import "./mindmap.css";
+
+body {
+  font-family: sans-serif;
+}
+

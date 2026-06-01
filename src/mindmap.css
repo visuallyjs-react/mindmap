@@ -1,0 +1,225 @@
+:root {
+    --vjs-delete-icon:url(data:image/svg+xml;base64,PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgLTI1NiAxNzkyIDE3OTIiIHZlcnNpb249IjEuMSI+CiAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwtMSwxOTcuNDIzNzMsMTI1NS4wNTA4KSI+CiAgICAgICAgPHBhdGggc3Ryb2tlPSJjdXJyZW50Q29sb3IiIGQ9Ik0gNTEyLDgwMCBWIDIyNCBxIDAsLTE0IC05LC0yMyAtOSwtOSAtMjMsLTkgaCAtNjQgcSAtMTQsMCAtMjMsOSAtOSw5IC05LDIzIHYgNTc2IHEgMCwxNCA5LDIzIDksOSAyMyw5IGggNjQgcSAxNCwwIDIzLC05IDksLTkgOSwtMjMgeiBtIDI1NiwwIFYgMjI0IHEgMCwtMTQgLTksLTIzIC05LC05IC0yMywtOSBoIC02NCBxIC0xNCwwIC0yMyw5IC05LDkgLTksMjMgdiA1NzYgcSAwLDE0IDksMjMgOSw5IDIzLDkgaCA2NCBxIDE0LDAgMjMsLTkgOSwtOSA5LC0yMyB6IG0gMjU2LDAgViAyMjQgcSAwLC0xNCAtOSwtMjMgLTksLTkgLTIzLC05IGggLTY0IHEgLTE0LDAgLTIzLDkgLTksOSAtOSwyMyB2IDU3NiBxIDAsMTQgOSwyMyA5LDkgMjMsOSBoIDY0IHEgMTQsMCAyMywtOSA5LC05IDksLTIzIHogTSAxMTUyLDc2IHYgOTQ4IEggMjU2IFYgNzYgUSAyNTYsNTQgMjYzLDM1LjUgMjcwLDE3IDI3Ny41LDguNSAyODUsMCAyODgsMCBoIDgzMiBxIDMsMCAxMC41LDguNSA3LjUsOC41IDE0LjUsMjcgNywxOC41IDcsNDAuNSB6IE0gNDgwLDExNTIgaCA0NDggbCAtNDgsMTE3IHEgLTcsOSAtMTcsMTEgSCA1NDYgcSAtMTAsLTIgLTE3LC0xMSB6IG0gOTI4LC0zMiB2IC02NCBxIDAsLTE0IC05LC0yMyAtOSwtOSAtMjMsLTkgaCAtOTYgViA3NiBxIDAsLTgzIC00NywtMTQzLjUgLTQ3LC02MC41IC0xMTMsLTYwLjUgSCAyODggcSAtNjYsMCAtMTEzLDU4LjUgUSAxMjgsLTExIDEyOCw3MiB2IDk1MiBIIDMyIHEgLTE0LDAgLTIzLDkgLTksOSAtOSwyMyB2IDY0IHEgMCwxNCA5LDIzIDksOSAyMyw5IGggMzA5IGwgNzAsMTY3IHEgMTUsMzcgNTQsNjMgMzksMjYgNzksMjYgaCAzMjAgcSA0MCwwIDc5LC0yNiAzOSwtMjYgNTQsLTYzIGwgNzAsLTE2NyBoIDMwOSBxIDE0LDAgMjMsLTkgOSwtOSA5LC0yMyB6Ii8+CiAgICA8L2c+Cjwvc3ZnPgo=);
+
+    /* Professional Color Palette */
+    --vjs-mindmap-primary-color: #2563eb;
+    --vjs-mindmap-primary-hover: #1d4ed8;
+    --vjs-mindmap-node-bg: #ffffff;
+    --vjs-mindmap-node-text: #1f2937;
+    --vjs-mindmap-node-border: #e5e7eb;
+    --vjs-mindmap-node-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --vjs-mindmap-accent-color: #ef4444;
+    --vjs-mindmap-accent-hover: #dc2626;
+    --vjs-mindmap-canvas-bg: #ececec;
+    --vjs-mindmap-grid-color: rgba(0, 0, 0, 0.05);
+}
+
+.vjs-surface {
+    height: 100%;
+    width: 100%;
+}
+
+.vjs-controls {
+    position: absolute;
+    left: 1.25rem;
+    top: 1.25rem;
+    z-index: 100;
+}
+
+.vjs-miniview {
+    position: absolute;
+    right: 1.25rem;
+    top: 1.25rem;
+    z-index: 100;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--vjs-mindmap-node-shadow);
+    border: 1px solid var(--vjs-mindmap-node-border);
+}
+
+.vjs-mindmap {
+    display: flex;
+    height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.vjs-mindmap-canvas {
+    background-color: var(--vjs-mindmap-canvas-bg);
+    display: flex;
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden !important;
+}
+
+.vjs-mindmap-rhs {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: #ffffff;
+    flex: 0 0 300px;
+    padding: 24px 16px;
+    border-left: 1px solid var(--vjs-mindmap-node-border);
+    box-shadow: -2px 0 10px rgba(0,0,0,0.02);
+}
+
+/* ----------------- INSPECTOR ----------------------- */
+
+.vjs-mindmap-inspector h3 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4b5563;
+    margin-bottom: 0.5rem;
+    padding: 0 1rem;
+}
+
+.vjs-mindmap-inspector input[type="text"],
+.vjs-mindmap-inspector textarea {
+    width: calc(100% - 2rem);
+    margin: 0.5rem 1rem 1.5rem 1rem;
+    padding: 0.625rem;
+    border: 1px solid var(--vjs-mindmap-node-border);
+    border-radius: 6px;
+    font-size: 0.875rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.vjs-mindmap-inspector input[type="text"]:focus,
+.vjs-mindmap-inspector textarea:focus {
+    border-color: var(--vjs-mindmap-primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ----------------- mindmap node styles ------------*/
+
+.vjs-mindmap-vertex {
+    width: 180px;
+    height: 80px;
+    background-color: var(--vjs-mindmap-node-bg);
+    color: var(--vjs-mindmap-node-text);
+    font-weight: 500;
+    border: 1px solid var(--vjs-mindmap-node-border);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 12px;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: var(--vjs-mindmap-node-shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.vjs-mindmap-title {
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+.vjs-mindmap-notes {
+    font-size: 0.75rem;
+    font-weight: normal;
+    color: #6b7280;
+    margin-top: 0.25rem;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+.vjs-mindmap-vertex:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.vjs-surface-selected-element .vjs-mindmap-vertex {
+    border-color: var(--vjs-mindmap-primary-color);
+    box-shadow: 0 0 0 2px var(--vjs-mindmap-primary-color), var(--vjs-mindmap-node-shadow);
+}
+
+.vjs-surface-selected-element {
+    outline: none;
+}
+
+.vjs-add-mindmap-child {
+    position: absolute;
+    cursor: pointer;
+    bottom: -12px;
+    width: 24px;
+    height: 24px;
+    background: var(--vjs-mindmap-primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 1;
+    transition: background-color 0.2s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.vjs-add-mindmap-child:hover {
+    background-color: var(--vjs-mindmap-primary-hover);
+    transform: scale(1.1);
+}
+
+.vjs-add-mindmap-child:after {
+    content: '+';
+    margin-top: -2px;
+}
+
+.vjs-add-mindmap-child[data-direction='left'] {
+    left: 20px;
+}
+
+.vjs-add-mindmap-child[data-direction='right'] {
+    right: 20px;
+}
+
+.vjs-mindmap-info {
+    cursor: pointer;
+    position: absolute;
+    left: 0.75rem;
+    top: 0.75rem;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    font-size: 16px;
+}
+
+.vjs-mindmap-info:hover {
+    opacity: 1;
+    color: var(--vjs-mindmap-primary-color);
+}
+
+.vjs-mindmap-info:after {
+    content: "ⓘ";
+}
+
+.vjs-mindmap-delete {
+    position: absolute;
+    cursor: pointer;
+    color: #9ca3af;
+    top: 0.75rem;
+    right: 0.75rem;
+    opacity: 0;
+    transition: opacity 0.2s, color 0.2s;
+    font-size: 14px;
+}
+
+.vjs-mindmap-vertex:hover .vjs-mindmap-delete {
+    opacity: 1;
+}
+
+.vjs-surface-selected-element .vjs-mindmap-delete {
+    opacity: 1;
+}
+
+.vjs-mindmap-delete:hover {
+    color: var(--vjs-mindmap-accent-color);
+}
+
+.vjs-mindmap-delete:after {
+    content: "✕";
+}
