@@ -2,14 +2,13 @@ import React, { useEffect, useRef } from "react"
 
 import './mindmap.css'
 
-import { registerParser, registerExporter, uuid, EVENT_GRAPH_CLEARED, CONNECTOR_TYPE_STRAIGHT, AnchorLocations, EVENT_CANVAS_CLICK, EVENT_UNDO, EVENT_REDO } from "@visuallyjs/browser-ui"
+import { BowtieLayout, registerParser, registerExporter, uuid, EVENT_GRAPH_CLEARED, CONNECTOR_TYPE_STRAIGHT, AnchorLocations, EVENT_CANVAS_CLICK, EVENT_UNDO, EVENT_REDO } from "@visuallyjs/browser-ui"
 import { SurfaceProvider, SurfaceComponent, ControlsComponent, MiniviewComponent } from "@visuallyjs/browser-ui-react";
 import {CLASS_ADD_CHILD, CLASS_MINDMAP_DELETE, CLASS_MINDMAP_INFO, LEFT, RIGHT, SUBTOPIC} from "./definitions";
 import {MINDMAP_JSON, mindmapJsonExporter, mindmapJsonParser} from "./parser";
 import {MAIN} from "./definitions";
 
 import Inspector from "./InspectorComponent"
-import {MindmapLayout} from "./layout";
 
 function App({url}) {
 
@@ -125,12 +124,17 @@ function App({url}) {
         // do not have their own DOM element assigned.
         logicalPorts:true,
         // Run a relayout whenever a new edge is established, which happens programmatically when the user adds a new subtopic.
-        refreshLayoutOnEdgeConnect:true,
+        relayoutOnEdgeConnect:true,
         // for the purposes of testing. Without this the right mouse button is disabled by default.
         consumeRightClick:false,
-        // Use our custom mindmap layout.
+        // Use a bowtie layout.
         layout:{
-            type:MindmapLayout.type,
+            type:BowtieLayout.type,
+            options:{
+                getRootNode:(ds) => ds.getNodes().filter(d => d.data.type === MAIN)[0],
+                getUpstream:(ds, v) => v.getAllEdges().filter(e => e.target.data.direction === LEFT).map(e => e.target),
+                getDownstream:(ds, v) => v.getAllEdges().filter(e => e.target.data.direction === RIGHT).map(e => e.target)
+            }
         },
         edges:{
             connector:{
