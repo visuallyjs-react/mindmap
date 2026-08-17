@@ -53,7 +53,7 @@ function App({url}) {
         // for edges from the main node, we attach them to a port on the node, because the main node can
         // have `left` and `right` edges. For subtopic nodes we attach directly to the node. So this code tests
         // for a matching port and uses it as the source if found, otherwise it uses the source node.
-        const source = direction != null ? vertex.getPort(direction) : vertex
+        const source = vertex
         const payload = {
             id:uuid(),
             parentId:vertex.id,
@@ -119,10 +119,6 @@ function App({url}) {
         elementsDraggable:false,
         // after load, zoom the display so all nodes are visible.
         zoomToFit:true,
-        // show connections to ports as being attached to their parent nodes. We use this for the main node: its edges
-        // are connected to either a `right` or `left` port on the main node, but these ports are logical ports only - they
-        // do not have their own DOM element assigned.
-        logicalPorts:true,
         // Run a relayout whenever a new edge is established, which happens programmatically when the user adds a new subtopic.
         relayoutOnEdgeConnect:true,
         // for the purposes of testing. Without this the right mouse button is disabled by default.

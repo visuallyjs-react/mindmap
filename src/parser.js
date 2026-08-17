@@ -11,11 +11,6 @@ export const mindmapJsonParser = (jd, model, parameters) => {
     data.type = MAIN
     let mainTopic = model.addNode(data)
 
-    // add logical ports for connections to each side of the
-    // main node
-    model.addPort(mainTopic, {id:LEFT})
-    model.addPort(mainTopic,{id:RIGHT})
-
     const _processChildren = (focus, direction) => {
         const c = focus.data.children || []
         c.forEach((_c) => {
@@ -30,13 +25,12 @@ export const mindmapJsonParser = (jd, model, parameters) => {
 
     const _processRootChildren = (direction) => {
         const n = data[direction]
-        const source = mainTopic.getPort(direction)
         n.forEach(l => {
             l.type = SUBTOPIC
             l.direction = direction
             l.children = l.children || []
             const ln = model.addNode(l)
-            model.addEdge({source, target:ln, data:{direction:direction}})
+            model.addEdge({source:mainTopic, target:ln, data:{direction:direction}})
             _processChildren(ln, direction)
         })
     }
