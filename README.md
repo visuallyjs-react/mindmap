@@ -1,14 +1,9 @@
-# React Mindmap Builder
+# Mindmap Builder - VisuallyJs React
 
-This repo is a fully featured Mindmap Builder built with Visuallyjs React.
+A mindmap is a radial diagram used to visually organize information, typically starting with a single central concept and branching out into related ideas, tasks, or words. It is an effective tool for brainstorming, note-taking, and creative problem-solving, allowing users to map out thoughts in a non-linear, intuitive way.
 
-For a live demo see https://visuallyjs.com/demonstrations/mindmap
+https://visuallyjs.com/demonstrations/mindmap
 
-## Installation/Getting Started
-
-1. Clone this repo
-2. `npm install`
-3. `npm run dev`
-
+## Screenshot
 
 ![Mindmap Screenshot](https://static.visuallyjs.com/img/app-card/mindmap-2400.png)
